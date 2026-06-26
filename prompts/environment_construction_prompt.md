@@ -7,6 +7,12 @@
 - プログラムは`ipynb`ファイルで実行するため，いずれの環境も必ず`ipykernel`，`jupyter`，`nbconvert` をインストールする．
 - 複数の仮想環境を作る場合があるため環境を保存するディレクトリ名を`.env_{環境名}`にする
 - 使用するライブラリとそのバージョンを `requirements_{環境名}.txt` に記述し，これに基づきインストールする．
+- `uv`の仮想環境がVS Codeに識別されるよう`.vscode/settings.json`に下記を記載してください．
+```text
+{
+    "python.venvPath": "${workspaceFolder}"
+}
+```
 
 ## Git
 - 学習結果を保存するディレクトリ（`outputs/`）やデータセットを保存するディレクトリ (`datasets/`) ，仮想環境のディレクトリ (`.env_{環境名}`) などは，サイズが巨大になるため `.gitignore` に追加する．
