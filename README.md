@@ -1,6 +1,12 @@
 # cursor_template
 
-WSL環境を作るためのコマンド
+## プロジェクトを作る際
+```text
+git init
+git submodule add https://github.com/yryo1005/cursor_template.git
+```
+
+## WSL環境を作るためのコマンド
 ```text
 wsl --install -d Ubuntu-22.04
 
