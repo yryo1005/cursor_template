@@ -1,4 +1,5 @@
 # 環境構築
+- GeminiやHugging Face HubなどのAPIのトークンが `tokens.json` に格納されています．
 
 ## Pythonの仮想環境
 - OSやチップセット，GPUのスペックを確認し，これに基づき仮想環境を作成する
@@ -16,4 +17,4 @@
 
 ## Git
 - 学習結果を保存するディレクトリ（`outputs/`）やデータセットを保存するディレクトリ (`datasets/`) ，仮想環境のディレクトリ (`.env_{環境名}`) などは，サイズが巨大になるため `.gitignore` に追加する．
-
+- GeminiやHugging Face Hubのトークンが `tokens.json`に格納されていますが，これも `.gitignore` に追加する．
