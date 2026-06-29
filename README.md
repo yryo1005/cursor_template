@@ -56,6 +56,7 @@ sudo apt upgrade -y
 sudo apt install -y git build-essential curl wget unzip libgl1-mesa-glx libglib2.0-0 htop tmux
 
 # UV
+sudo apt install -y python3-dev
 curl -LsSf https://astral.sh/uv/install.sh | sh
 source $HOME/.local/bin/env
 
