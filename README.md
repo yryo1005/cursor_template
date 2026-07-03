@@ -3,7 +3,11 @@
 ## プロジェクトを作る際
 ```text
 git init
+
 git submodule add https://github.com/yryo1005/cursor_template.git
+
+mkdir orders
+mkdir reports
 ```
 
 ## WSL環境を作るためのコマンド
