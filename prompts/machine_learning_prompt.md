@@ -2,6 +2,8 @@
 - `@cursor_template/prompts/environment_construction_prompt.md` の指示に基づき，仮想環境を作成してください
 - プログラムの終了後，仕様書と実験結果をまとめたレポートを `@cursor_template/prompts/document_prompt.md` の指示に基づき作成してください．
 - 実験計画を考えるAIエージェントのリポジトリをサブモジュールとして追加し，`@cursor_experiment_agent/README.md`に従い，このリポジトリをセットアップしてください．
+- `tokens.json`が無い場合はユーザにこれを警告してください．
+- `tokens.json`は必ず`.gitignore`に追加してください．
 
 ```text
 git submodule add https://github.com/yryo1005/cursor_experiment_agent.git

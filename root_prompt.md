@@ -28,14 +28,8 @@
 │   │   ├── machine_learning_prompt.md              # AIの学習の指示が書かれたドキュメント
 │   │   ├── document.md                             # ドキュメントの指示が書かれたドキュメント
 │   |   └── tex.py                                  # TeXの指示が書かれたドキュメント
-|   ├── srs/                 # それぞれのタスクの便利関数がまとめられたフォルダ
-│   |   └── machine_learning_utils.py               # AIの学習で使用する便利関数がまとめられたファイル
-|   └── TeX_templates/       # TeXテンプレートがまとめられたフォルダ
-│       └── Report           # レポートのテンプレート
-│           ├── main.tex         # latexでコンパイルするソース
-│           ├── sections/        # レポートの章ごとに分けられたソースをまとめたフォルダ
-│           │   └── 01_introdcution.tex             # ソースは章ごとに分割する
-│           └── figures/         # レポートの画像をまとめたフォルダ
+|   └── srs/                 # それぞれのタスクの便利関数がまとめられたフォルダ
+│       └── machine_learning_utils.py               # AIの学習で使用する便利関数がまとめられたファイル
 │
 ├── .gitignore               # outputs/ や datasets/、除外
 │
@@ -69,11 +63,6 @@
 ├── orders/
 │   ├── order_001.md         # 作成するプログラムの指示が書かれたドキュメント
 │   ├── order_002.md         
-│   └── ...
-│
-├── orders/
-│   ├── report_001.md         # 実施した全実験の結果や考察をまとめたレポート
-│   ├── report_002.md
 │   └── ...
 │    
 └── document.md              # メインロジックやコード仕様を解説したドキュメント
