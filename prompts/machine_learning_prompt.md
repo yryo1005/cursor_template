@@ -1,7 +1,11 @@
 # AIの学習のプログラムを作る際に参照するドキュメント
 - `@cursor_template/prompts/environment_construction_prompt.md` の指示に基づき，仮想環境を作成してください
 - プログラムの終了後，仕様書と実験結果をまとめたレポートを `@cursor_template/prompts/document_prompt.md` の指示に基づき作成してください．
+- 実験計画を考えるAIエージェントのリポジトリをサブモジュールとして追加し，`@cursor_experiment_agent/README.md`に従い，このリポジトリをセットアップしてください．
 
+```text
+git submodule add https://github.com/yryo1005/cursor_experiment_agent.git
+```
 ---
 
 # 実験の実施に関わる指示
@@ -37,8 +41,8 @@ AIの学習は一度の実行で必ずしもうまくいくわけではなく，
 ---
 ### **重要** 仕様書・レポートの作成
 下記の要求は必ず満たしてください
-- すべての実験が終了した後に，これまでに実施した実験の内容や条件，実験結果（グラフや考察）をまとめた `report.md` を作成すること．
-- 作成するプログラムの指示が，`order_{k}.md`の様に通し番号がある場合，作成するレポートのファイル名を `report_{k}.md`とする．
+- すべての実験が終了した後に，これまでに実施した実験の内容や条件，実験結果（グラフや考察）をまとめた `reports/report.md` を作成すること．
+- 作成するプログラムの指示が，`oreders/order_{k}.md`の様に通し番号がある場合，作成するレポートのファイル名を `reports/report_{k}.md`とする．
 
 ---
 
@@ -189,20 +193,22 @@ jupyter nbconvert --to notebook --execute --inplace train.ipynb
 │   ├── root_prompt.md       # プログラムの指示が書かれたドキュメント
 |   ├── prompts/             # それぞれのタスクの指示が書かれたプロンプトがまとめられたフォルダ
 │   │   ├── environment_construction_prompt.md      # 環境構築の指示が書かれたドキュメント
-│   │   ├── machine_learning_prompt.md              # AIの学習の指示が書かれたドキュメント
-|   ├── srs/                 # それぞれのタスクの便利関数がまとめられたフォルダ
-│   ├   └── machine_learning_utils.py               # AIの学習で使用する便利関数がまとめられたファイル
-|   └── TeX_templates/       # TeXテンプレートがまとめられたフォルダ
-│       └── Report           # レポートのテンプレート
-│           ├── main.tex         # latexでコンパイルするソース
-│           ├── sections/        # レポートの章ごとに分けられたソースをまとめたフォルダ
-│           │   └── 01_introdcution.tex             # ソースは章ごとに分割する
-│           └── figures/         # レポートの画像をまとめたフォルダ
-├── .gitignore               # outputs/ や datasets/、.venv/ を除外
-├── requirements_{環境名}.txt # 依存ライブラリとバージョンを固定
-├── visualize_result.ipynb   # outputs/ 内を走査して信頼区間付きグラフを描画するノートブック
+│   │   └── machine_learning_prompt.md              # AIの学習の指示が書かれたドキュメント
+|   └── srs/                 # それぞれのタスクの便利関数がまとめられたフォルダ
+│       └── machine_learning_utils.py               # AIの学習で使用する便利関数がまとめられたファイル
 │
-├── datasets                 # データセットが格納されるフォルダ
+├── cursor_experiment_agent/ # 実験計画を考えるAIエージェントのリポジトリ
+│   ├── .agent_env/          # AIエージェントを実行するための仮想環境
+│   ├── requirements.txt     # cursor_experiment_agentの依存ライブラリ
+│   └── run_agent.py         # AIエージェントの実行ファイル
+├── tokens.json              # AIエージェントで使用する Gemini の API キー（git 管理外）
+│
+├── .gitignore               # outputs/ や datasets/、.venv/，tokens.json を除外
+│
+├── .環境名                   # uvの仮想環境
+├── requirements_{環境名}.txt # 依存ライブラリとバージョンを固定
+│
+├── datasets/                # データセットが格納されるフォルダ
 │
 ├── ex001_mnist_cnn/         # 実験001: 全比較手法で共通の条件（例: MNISTに対するCNN）
 │   ├── model.py             # この実験で使用するモデル構造（CNN）の定義
@@ -213,6 +219,8 @@ jupyter nbconvert --to notebook --execute --inplace train.ipynb
 │   ├── model.py
 │   ├── utils.py
 │   └── train.ipynb
+│
+├── visualize_result.ipynb   # outputs/ 内を走査して信頼区間付きグラフを描画するノートブック
 │
 ├── outputs/                 # 実験結果の出力先（.gitignoreに対象設定）
 │   ├── ex001_mnist_cnn/
@@ -231,7 +239,16 @@ jupyter nbconvert --to notebook --execute --inplace train.ipynb
 │   └── ex002_cifar10/
 │       └── ...
 │
-├── order.md                 # 作成するプログラムの指示が書かれたドキュメント (order_k.mdのように通し番号がある場合がある)
-├── document.md              # メインロジックやコード仕様を解説したドキュメント
-└── report.md                # 実施した全実験の結果や考察をまとめたレポート (report_k.mdのように通し番号がある場合がある)
+├── orders/
+│   ├── order_001.md         # 作成するプログラムの指示が書かれたドキュメント
+│   ├── order_002.md         
+│   └── ...
+│
+├── reports/
+│   ├── report_001.md        # 実施した全実験の結果や考察をまとめたレポート
+│   ├── report_002.md
+│   └── ...
+│
+├── visualize_result.ipynb   # outputs/ 内を走査して信頼区間付きグラフを描画するノートブック
+└── document.md              # メインロジックやコード仕様を解説したドキュメント
 ```
