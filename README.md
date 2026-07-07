@@ -93,4 +93,14 @@ source $HOME/.local/bin/env
 # TeX (インストール中に止まった場合，Enterキーを連打する)
 sudo apt install -y texlive-full texlive-lang-japanese texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra    
 sudo kanji-config-updmap-sys haranoaji
+
+sudo apt update
+sudo apt upgrade -y
+
+###
+
+wsl --shutdown
+
+###
+wsl --export Ubumntu2204_Cursor_Plane C:\Ubumntu2204_Cursor_Plane.tar
 ```
