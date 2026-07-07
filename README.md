@@ -1,6 +1,20 @@
 # cursor_template
 
+## WSL環境をインポート
+1. 下記のリンクから `Ubumntu2204_Cursor_Plane.tar` をダウンロード
+https://drive.google.com/drive/folders/10jDbQ5NyOvBQwpiPVDvx4W6unkHHvDWn?usp=sharing
+
+2. 管理者としてコマンドプロンプトを実行し，下記のコマンドを実行
+```text
+mkdir C:\Ubumntu2204_Cursor_Plane
+wsl --import Ubumntu2204_Cursor_Plane C:\Ubumntu2204_Cursor_Plane C:\Ubumntu2204_Cursor_Plane.tar
+```
+   
 ## プロジェクトを作る際
+1. CursorのEditorで`Ubumntu2204_Cursor_Plane`のWSL環境に接続
+2. 作業ディレクトリを作成
+3. 作業ディレクトリに移動し，ターミナルで下記のコマンドを実行
+
 ```text
 git init
 
@@ -10,7 +24,16 @@ mkdir orders
 mkdir reports
 ```
 
-## WSL環境を作るためのコマンド
+4. orders/order.mdを作成し，下記の内容を記述
+```text
+@cursor_template/root_prompt.md を参照してプログラムを作成してください
+
+{作成するプログラムの指示}
+```
+
+5. orders/order.mdを参照しプログラムを作成する様にCursorに指示する
+
+## WSL環境を作るためのコマンド(上級者向け)
 ```text
 wsl --install -d Ubuntu-22.04
 
