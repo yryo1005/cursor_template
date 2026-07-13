@@ -1,17 +1,17 @@
 # cursor_template
 
 ## WSL環境をインポート
-1. 下記のリンクから `Ubumntu2204_Cursor_Plane.tar` をダウンロード
+1. 下記のリンクから `Ubuntu2204_Cursor_Plane.tar` をダウンロード
 https://drive.google.com/drive/folders/10jDbQ5NyOvBQwpiPVDvx4W6unkHHvDWn?usp=sharing
 
 2. 管理者としてコマンドプロンプトを実行し，下記のコマンドを実行
 ```text
-mkdir C:\Ubumntu2204_Cursor_Plane
-wsl --import Ubumntu2204_Cursor_Plane C:\Ubumntu2204_Cursor_Plane C:\Ubumntu2204_Cursor_Plane.tar
+mkdir C:\Ubuntu2204_Cursor_Plane
+wsl --import Ubuntu2204_Cursor_Plane C:\Ubuntu2204_Cursor_Plane C:\Ubuntu2204_Cursor_Plane.tar
 ```
    
 ## プロジェクトを作る際
-1. CursorのEditorで`Ubumntu2204_Cursor_Plane`のWSL環境に接続
+1. CursorのEditorで`Ubuntu2204_Cursor_Plane`のWSL環境に接続
 2. 作業ディレクトリを作成
 3. 作業ディレクトリに移動し，ターミナルで下記のコマンドを実行
 
@@ -72,9 +72,9 @@ wsl --shutdown
 
 ###
 wsl --export Ubuntu-22.04 C:\Ubuntu-22.04.tar
-mkdir C:\Ubumntu2204_Cursor_Plane
-wsl --import Ubumntu2204_Cursor_Plane C:\Ubumntu2204_Cursor_Plane C:\Ubuntu-22.04.tar
-wsl -d Ubumntu2204_Cursor_Plane
+mkdir C:\Ubuntu2204_Cursor_Plane
+wsl --import Ubuntu2204_Cursor_Plane C:\Ubuntu2204_Cursor_Plane C:\Ubuntu-22.04.tar
+wsl -d Ubuntu2204_Cursor_Plane
 
 ###
 cd /home/user/
@@ -125,5 +125,5 @@ sudo apt upgrade -y
 wsl --shutdown
 
 ###
-wsl --export Ubumntu2204_Cursor_Plane C:\Ubumntu2204_Cursor_Plane.tar
+wsl --export Ubuntu2204_Cursor_Plane C:\Ubuntu2204_Cursor_Plane.tar
 ```
